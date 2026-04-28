@@ -52,7 +52,7 @@ body{box-sizing:border-box}
   </style>
 </head>
 <body class="h-full text-blue-600 font-sans leading-relaxed" style="background:#e0f2fe">
-
+ 
 <!-- ===== FIREBASE SETUP SCREEN (admin only, first time) ===== -->
 <div id="fbSetup" class="fb-setup" style="display:none">
   <div class="bg-white rounded-2xl p-8 max-w-lg w-full mx-4 shadow-2xl overflow-y-auto max-h-screen">
@@ -65,7 +65,7 @@ body{box-sizing:border-box}
         <p class="text-sm text-slate-500">ทำครั้งเดียว ใช้ได้ตลอด</p>
       </div>
     </div>
-
+ 
     <div class="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-5 text-xs text-blue-800 leading-relaxed">
       <p class="font-bold mb-2 text-sm">📋 ขั้นตอน (ทำครั้งเดียว ~10 นาที):</p>
       <ol class="list-decimal list-inside space-y-1.5 text-blue-700">
@@ -76,7 +76,7 @@ body{box-sizing:border-box}
         <li>Authentication → <strong>Settings → Authorized domains → Add domain</strong> → ใส่ domain ที่เปิดแอป</li>
       </ol>
     </div>
-
+ 
     <div class="space-y-3 mb-5">
       <div>
         <label class="block text-sm text-slate-700 mb-1 font-semibold">Web API Key <span class="text-red-500">*</span></label>
@@ -91,7 +91,7 @@ body{box-sizing:border-box}
         <input type="text" id="fbUrlInput" class="input-dark w-full text-sm" placeholder="https://my-project-default-rtdb.asia-southeast1.firebasedatabase.app">
       </div>
     </div>
-
+ 
     <div class="bg-amber-50 border border-amber-200 rounded-xl p-3 mb-5 text-xs text-amber-800">
       <p class="font-bold mb-1">🔒 Security Rules ที่ต้องตั้งใน Realtime Database → Rules:</p>
       <pre class="bg-amber-100 rounded p-2 text-xs overflow-x-auto">{
@@ -102,11 +102,11 @@ body{box-sizing:border-box}
 }</pre>
       <p class="mt-1 text-amber-600">→ Realtime Database → Rules → วางโค้ดด้านบน → Publish</p>
     </div>
-
+ 
     <button onclick="saveFbConfig()" class="btn-primary w-full rounded-xl text-sm font-bold py-3">บันทึกและเชื่อมต่อ →</button>
   </div>
 </div>
-
+ 
 <!-- ===== LOGIN SCREEN ===== -->
 <div id="loginScreen" class="login-screen" style="display:none">
   <div class="text-center px-6">
@@ -124,10 +124,10 @@ body{box-sizing:border-box}
     <p class="text-blue-300 text-xs mt-6">เฉพาะ Google Account ที่ได้รับอนุญาตเท่านั้น</p>
   </div>
 </div>
-
+ 
 <div class="app-root flex flex-col h-full" id="appRoot">
   <div class="toast-container" id="toastContainer"></div>
-
+ 
   <!-- Header -->
   <header class="px-6 py-4 flex items-center justify-between flex-shrink-0" style="background:#3b82f6;border-bottom:2px solid #1e40af;box-shadow:0 2px 8px rgba(59,130,246,.3)">
     <div class="flex items-center gap-3">
@@ -157,7 +157,7 @@ body{box-sizing:border-box}
       <div class="text-sm text-blue-50 font-semibold" id="currentDateTime"></div>
     </div>
   </header>
-
+ 
   <!-- Tab Navigation -->
   <nav class="px-6 py-2 flex gap-3 overflow-x-auto flex-shrink-0 border-b" style="background:#e0f2fe;border-color:#bae6fd">
     <button onclick="switchTab('dashboard')" data-tab="dashboard" class="tab-btn tab-active px-4 py-1 rounded-lg text-sm font-bold whitespace-nowrap flex items-center gap-2 bg-gradient-to-r from-sky-400 to-blue-500 text-white shadow-md">
@@ -176,9 +176,9 @@ body{box-sizing:border-box}
       <i data-lucide="settings" class="w-4 h-4 text-fuchsia-100"></i> การตั้งค่า
     </button>
   </nav>
-
+ 
   <main class="flex-1 overflow-auto p-0" style="background:#e0f2fe">
-
+ 
     <!-- DASHBOARD -->
     <div id="tab-dashboard" class="tab-content fade-in" style="background:#f0f4f8;min-height:100%">
       <div class="px-5 py-4 flex flex-wrap items-center gap-3" style="background:#fff;border-bottom:1px solid #e2e8f0">
@@ -203,11 +203,11 @@ body{box-sizing:border-box}
           <button onclick="downloadCheckReport()" class="flex items-center gap-1.5 bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-xl text-xs font-bold transition-all"><i data-lucide="download" class="w-3.5 h-3.5"></i> Export</button>
         </div>
       </div>
-
+ 
       <div class="p-4 space-y-4">
         <!-- KPI CARDS -->
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3" id="dashStats"></div>
-
+ 
         <!-- ROW 2 -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100">
@@ -225,7 +225,7 @@ body{box-sizing:border-box}
             <div id="top10Chart"></div>
           </div>
         </div>
-
+ 
         <!-- ROW 3 -->
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
           <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100">
@@ -245,7 +245,7 @@ body{box-sizing:border-box}
             <div id="statusProgressBars" class="space-y-3"></div>
           </div>
         </div>
-
+ 
         <!-- ROW 4: Recent table -->
         <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
           <div class="flex items-center justify-between px-4 py-3 border-b border-slate-100">
@@ -270,7 +270,7 @@ body{box-sizing:border-box}
         </div>
       </div>
     </div>
-
+ 
     <!-- RECEIVE -->
     <div id="tab-receive" class="tab-content hidden fade-in">
       <div class="px-6 py-3 pb-6">
@@ -295,7 +295,7 @@ body{box-sizing:border-box}
         </div>
       </div>
     </div>
-
+ 
     <!-- CHECK -->
     <div id="tab-check" class="tab-content hidden fade-in">
       <div class="px-6 py-3 pb-6">
@@ -322,7 +322,7 @@ body{box-sizing:border-box}
         </div>
       </div>
     </div>
-
+ 
     <!-- HISTORY -->
     <div id="tab-history" class="tab-content hidden fade-in">
       <div class="px-6 py-3 pb-4">
@@ -367,7 +367,7 @@ body{box-sizing:border-box}
         </div>
       </div>
     </div>
-
+ 
     <!-- SETTINGS -->
     <div id="tab-settings" class="tab-content hidden fade-in">
       <div class="px-6 py-3 pb-6">
@@ -404,7 +404,7 @@ body{box-sizing:border-box}
             <strong>⏰ แจ้งเตือนอัตโนมัติ:</strong> ส่ง Discord เวลา 10:00 น. ของวันถัดจากกำหนดส่ง
           </div>
         </div>
-
+ 
         <!-- ADMIN PANEL -->
         <div class="card-glass rounded-lg p-6 mt-6" id="adminSection">
           <h3 class="text-sm font-bold text-slate-800 mb-1 flex items-center gap-2">
@@ -413,7 +413,7 @@ body{box-sizing:border-box}
             <span class="text-xs bg-red-100 text-red-600 px-2 py-0.5 rounded font-semibold ml-1">Admin</span>
           </h3>
           <p class="text-xs text-slate-500 mb-4">ต้องใส่รหัส Admin ก่อนเข้าถึงส่วนนี้</p>
-
+ 
           <!-- ล็อค: กรอกรหัส -->
           <div id="adminLock">
             <div class="flex gap-3">
@@ -425,7 +425,7 @@ body{box-sizing:border-box}
             <p id="adminPinError" class="text-red-500 text-xs mt-2 hidden">รหัสไม่ถูกต้อง</p>
             <p class="text-xs text-slate-400 mt-2">รหัส Admin เก็บไว้ใน Firebase — ตั้งครั้งแรกได้ในหน้านี้</p>
           </div>
-
+ 
           <!-- ปลดล็อคแล้ว: จัดการ email -->
           <div id="adminPanel" class="hidden">
             <div class="flex items-center justify-between mb-4">
@@ -434,7 +434,7 @@ body{box-sizing:border-box}
                 <i data-lucide="lock" class="w-3 h-3"></i> ล็อคอีกครั้ง
               </button>
             </div>
-
+ 
             <!-- เปลี่ยนรหัส Admin -->
             <div class="bg-slate-50 rounded-xl p-4 mb-5 border border-slate-200">
               <p class="text-xs font-bold text-slate-700 mb-3">🔑 ตั้ง/เปลี่ยนรหัส Admin</p>
@@ -444,7 +444,7 @@ body{box-sizing:border-box}
                 <button onclick="saveAdminPin()" class="btn-primary text-white px-4 py-2.5 rounded-lg text-sm font-bold whitespace-nowrap">บันทึกรหัส</button>
               </div>
             </div>
-
+ 
             <!-- จัดการ email whitelist -->
             <div class="bg-slate-50 rounded-xl p-4 border border-slate-200">
               <div class="flex items-center justify-between mb-3">
@@ -459,7 +459,7 @@ body{box-sizing:border-box}
               </div>
               <div id="emailList" class="space-y-2 max-h-64 overflow-y-auto"></div>
               <p id="emailListEmpty" class="text-xs text-slate-400 text-center py-4 hidden">ยังไม่มี email ในลิสต์</p>
-
+ 
               <div class="mt-4 bg-amber-50 border border-amber-200 rounded-lg p-3 text-xs text-amber-800">
                 <p class="font-bold mb-1">⚠️ หลังเพิ่ม/ลบ email แล้ว ต้องอัปเดต Firebase Rules ด้วย:</p>
                 <div class="flex gap-2 mt-2">
@@ -479,7 +479,7 @@ body{box-sizing:border-box}
     </div>
   </main>
 </div>
-
+ 
 <div id="confirmDialog" class="confirm-overlay hidden">
   <div class="card-glass rounded-3xl p-8 max-w-sm mx-4 bg-white">
     <p id="confirmMsg" class="text-gray-800 mb-6 text-lg"></p>
@@ -489,7 +489,7 @@ body{box-sizing:border-box}
     </div>
   </div>
 </div>
-
+ 
 <script>
 // ============================================================
 // FIREBASE CONFIG — stored in localStorage after first setup
@@ -498,13 +498,13 @@ const FB_APIKEY_KEY   = 'fb_api_key';
 const FB_PROJID_KEY   = 'fb_project_id';
 const FB_URL_KEY      = 'fb_rtdb_url';
 const FB_TOKEN_KEY    = 'fb_id_token';
-
+ 
 let FB_API_KEY  = localStorage.getItem(FB_APIKEY_KEY)  || '';
 let FB_PROJ_ID  = localStorage.getItem(FB_PROJID_KEY)  || '';
 let FB_URL      = localStorage.getItem(FB_URL_KEY)     || '';
 let FB_ID_TOKEN = '';   // Firebase ID token จาก Google Sign-In (ไม่เก็บ localStorage)
 let currentUser = null;
-
+ 
 // ============================================================
 // SETUP SCREEN
 // ============================================================
@@ -528,7 +528,7 @@ function changeFbConfig() {
   document.getElementById('fbUrlInput').value = FB_URL;
   document.getElementById('fbSetup').style.display='flex';
 }
-
+ 
 // ============================================================
 // GOOGLE SIGN-IN — ใช้ Firebase JS SDK (แก้ปัญหา OAuth Client ID)
 // ============================================================
@@ -541,37 +541,37 @@ function hideLoginScreen() {
   document.getElementById('loginScreen').style.display='none';
   document.getElementById('appRoot').style.visibility='visible';
 }
-
+ 
 // Firebase JS SDK จะถูกโหลดจาก CDN และ init ที่นี่
 let fbApp = null, fbAuth = null, fbDatabase = null;
-
+ 
 async function initFirebaseSDK() {
   // โหลด Firebase SDK แบบ module จาก CDN
   const { initializeApp } = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js');
   const { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut: fbSignOut } = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js');
-
+ 
   const firebaseConfig = {
     apiKey: FB_API_KEY,
     authDomain: `${FB_PROJ_ID}.firebaseapp.com`,
     databaseURL: FB_URL,
     projectId: FB_PROJ_ID,
   };
-
+ 
   fbApp = initializeApp(firebaseConfig);
   fbAuth = getAuth(fbApp);
-
+ 
   // เก็บ reference ไว้ใช้ใน signOut
   window._fbSignOut = () => fbSignOut(fbAuth);
   window._GoogleAuthProvider = GoogleAuthProvider;
   window._signInWithPopup = signInWithPopup;
-
+ 
   // ฟัง auth state
   onAuthStateChanged(fbAuth, async (user) => {
     if (user) {
       // ได้รับ ID token สำหรับ Firebase REST
       FB_ID_TOKEN = await user.getIdToken();
       currentUser = { name: user.displayName, email: user.email, photo: user.photoURL };
-
+ 
       // ตรวจ whitelist
       const allowed = await checkEmailAllowed(currentUser.email);
       if (!allowed) {
@@ -584,12 +584,12 @@ async function initFirebaseSDK() {
         showLoginScreen();
         return;
       }
-
+ 
       // Token refresh อัตโนมัติทุก 55 นาที
       setInterval(async () => {
         try { FB_ID_TOKEN = await user.getIdToken(true); } catch(e) {}
       }, 55 * 60 * 1000);
-
+ 
       // แสดง user info
       const ui=document.getElementById('userInfo'), av=document.getElementById('userAvatar');
       const un=document.getElementById('userName'), sb=document.getElementById('signOutBtn');
@@ -601,13 +601,13 @@ async function initFirebaseSDK() {
     }
   });
 }
-
+ 
 function resetLoginBtn() {
   const btn = document.getElementById('loginBtn');
   btn.disabled = false;
   btn.innerHTML = `<svg class="w-5 h-5" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg> เข้าสู่ระบบด้วย Google`;
 }
-
+ 
 async function signInWithGoogle() {
   const btn = document.getElementById('loginBtn');
   const errEl = document.getElementById('loginError');
@@ -625,7 +625,7 @@ async function signInWithGoogle() {
     resetLoginBtn();
   }
 }
-
+ 
 async function signOut() {
   try {
     if (window._fbSignOut) await window._fbSignOut();
@@ -636,24 +636,24 @@ async function signOut() {
   document.getElementById('syncDot').classList.add('hidden');
   showLoginScreen();
 }
-
+ 
 // ============================================================
 // ADMIN PANEL — PIN + EMAIL WHITELIST
 // ============================================================
 let adminUnlocked = false;
 let allowedEmails = []; // [{fbKey, email}]
-
+ 
 // Hash รหัสด้วย SHA-256 ก่อนเก็บ ไม่เก็บ plaintext
 async function hashPin(pin) {
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(pin + '_doctrack_salt'));
   return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
 }
-
+ 
 async function unlockAdmin() {
   const pin = document.getElementById('adminPinInput').value;
   const errEl = document.getElementById('adminPinError');
   if (!pin) { errEl.textContent='กรุณาใส่รหัส'; errEl.classList.remove('hidden'); return; }
-
+ 
   try {
     const stored = await fbGet('config/adminPinHash');
     // ถ้ายังไม่มีรหัส → ตั้งครั้งแรกได้เลย (ใส่รหัสอะไรก็ได้)
@@ -675,7 +675,7 @@ async function unlockAdmin() {
     errEl.textContent='เกิดข้อผิดพลาด: '+e.message; errEl.classList.remove('hidden');
   }
 }
-
+ 
 function unlockSuccess() {
   adminUnlocked = true;
   document.getElementById('adminLock').classList.add('hidden');
@@ -685,13 +685,13 @@ function unlockSuccess() {
   loadAllowedEmails();
   lucide.createIcons();
 }
-
+ 
 function lockAdmin() {
   adminUnlocked = false;
   document.getElementById('adminLock').classList.remove('hidden');
   document.getElementById('adminPanel').classList.add('hidden');
 }
-
+ 
 async function saveAdminPin() {
   const np = document.getElementById('newAdminPin').value;
   const cp = document.getElementById('confirmAdminPin').value;
@@ -704,7 +704,7 @@ async function saveAdminPin() {
   document.getElementById('confirmAdminPin').value='';
   showToast('เปลี่ยนรหัส Admin เรียบร้อย');
 }
-
+ 
 async function loadAllowedEmails() {
   try {
     const data = await fbGet('config/allowedEmails');
@@ -712,7 +712,7 @@ async function loadAllowedEmails() {
   } catch(e) { allowedEmails = []; }
   renderEmailList();
 }
-
+ 
 function renderEmailList() {
   const c = document.getElementById('emailList');
   const e = document.getElementById('emailListEmpty');
@@ -732,7 +732,7 @@ function renderEmailList() {
     </div>`).join('');
   lucide.createIcons();
 }
-
+ 
 async function addAllowedEmail() {
   const input = document.getElementById('newEmailInput');
   const email = input.value.trim().toLowerCase();
@@ -747,7 +747,7 @@ async function addAllowedEmail() {
     showToast('เพิ่ม '+email+' แล้ว');
   }
 }
-
+ 
 async function removeAllowedEmail(fbKey) {
   const rec = allowedEmails.find(e=>e.fbKey===fbKey);
   if (!rec) return;
@@ -760,7 +760,7 @@ async function removeAllowedEmail(fbKey) {
     }
   });
 }
-
+ 
 // สร้าง Firebase Security Rules จาก email list
 function generateFirebaseRules() {
   if (!allowedEmails.length) {
@@ -774,7 +774,7 @@ function generateFirebaseRules() {
   }
 }`;
 }
-
+ 
 function copyFirebaseRules() {
   const rules = generateFirebaseRules();
   navigator.clipboard.writeText(rules).then(()=>{
@@ -787,7 +787,7 @@ function copyFirebaseRules() {
     showToast('คัดลอก Rules แล้ว!');
   });
 }
-
+ 
 // Check current user email against whitelist after login
 async function checkEmailAllowed(email) {
   try {
@@ -797,12 +797,12 @@ async function checkEmailAllowed(email) {
     return list.includes(email.toLowerCase());
   } catch(e) { return true; } // network error = allow (fail open for usability)
 }
-
+ 
 // ============================================================
 // FIREBASE REST HELPERS — ส่ง auth token ทุก request
 // ============================================================
 function authParam() { return FB_ID_TOKEN ? `?auth=${FB_ID_TOKEN}` : ''; }
-
+ 
 async function fbGet(path) {
   const r = await fetch(`${FB_URL}/${path}.json${authParam()}`, {cache:'no-store'});
   if (r.status===401||r.status===403) { showToast('Session หมดอายุ กรุณา Login ใหม่','error'); signOut(); throw new Error('Unauthorized'); }
@@ -829,7 +829,7 @@ async function fbDelete(path) {
   const r = await fetch(`${FB_URL}/${path}.json${authParam()}`, {method:'DELETE'});
   if (r.status===401||r.status===403) { showToast('Session หมดอายุ กรุณา Login ใหม่','error'); signOut(); }
 }
-
+ 
 // ============================================================
 // IN-MEMORY STORE
 // ============================================================
@@ -839,7 +839,7 @@ let receives  = []; // [{fbKey, company_name, date, person, status}]
 let checks    = []; // [{fbKey, company_name, check_date, checked_by, ...docs}]
 let webhookUrl = '';
 let confirmCallback = null;
-
+ 
 const STAFF = ['พี่ฝน','นุ๊ก','โอ๋','แก้ม','เมย์','ออม','ยุ้ย','ต้า','ฝน','อ้อ','เค้ก','น้องเค้ก','เฟรช','ฟาง','ไนซ์','ตาล'];
 const COMPANY_ACCOUNTANT_MAP = {
   'บริษัท 80 การาจ จำกัด':'ยุ้ย','บริษัท กริเนอร์ กรุ๊ป จำกัด':'อ้อ','บริษัท เก็ต โกรวอิ้ง จำกัด':'นุ๊ก',
@@ -881,7 +881,7 @@ const DOC_TYPES = [
   {key:'export',label:'ใบขนสินค้าออก'},{key:'shopee',label:'Report Shopee'},
   {key:'lazada',label:'Report Lazada'},{key:'tiktok',label:'Report TikTok Shop'}
 ];
-
+ 
 // ============================================================
 // LOAD ALL DATA — single fetch, instant render
 // ============================================================
@@ -900,7 +900,7 @@ async function loadAllData() {
   showSpinner(false);
   renderAll();
 }
-
+ 
 function parseFirebaseData(data) {
   companies = objToArr(data.companies || {});
   rounds    = objToArr(data.rounds    || {});
@@ -909,17 +909,17 @@ function parseFirebaseData(data) {
   webhookUrl = (data.config || {}).webhook || '';
   const whEl = document.getElementById('discordWebhook');
   if (whEl) whEl.value = webhookUrl;
-
+ 
   if (companies.length === 0) {
     // seed default companies (write once)
     seedDefaultCompanies();
   }
 }
-
+ 
 function objToArr(obj) {
   return Object.entries(obj).map(([fbKey, val]) => ({ fbKey, ...val }));
 }
-
+ 
 async function seedDefaultCompanies() {
   const names = Object.keys(COMPANY_ACCOUNTANT_MAP);
   companies = names.map(n => ({ fbKey: null, company_name: n }));
@@ -932,7 +932,7 @@ async function seedDefaultCompanies() {
   companies = objToArr(data || {});
   renderCompanyList();
 }
-
+ 
 // ============================================================
 // SAVE HELPERS — เร็ว เพราะ push ตรง
 // ============================================================
@@ -940,7 +940,7 @@ function showSpinner(show) {
   const el = document.getElementById('syncSpinner');
   if (el) el.style.display = show ? 'flex' : 'none';
 }
-
+ 
 async function fbSave(path, obj) {
   showSpinner(true);
   try {
@@ -949,7 +949,7 @@ async function fbSave(path, obj) {
   } catch(e) { showToast('บันทึกไม่สำเร็จ: ' + e.message, 'error'); return null; }
   finally { showSpinner(false); }
 }
-
+ 
 async function fbUpdate(path, fbKey, obj) {
   showSpinner(true);
   try {
@@ -958,14 +958,14 @@ async function fbUpdate(path, fbKey, obj) {
   } catch(e) { showToast('อัปเดตไม่สำเร็จ', 'error'); return false; }
   finally { showSpinner(false); }
 }
-
+ 
 async function fbRemove(path, fbKey) {
   showSpinner(true);
   try { await fbDelete(`${path}/${fbKey}`); return true; }
   catch(e) { showToast('ลบไม่สำเร็จ', 'error'); return false; }
   finally { showSpinner(false); }
 }
-
+ 
 // ============================================================
 // THAI DATE HELPERS
 // ============================================================
@@ -979,7 +979,7 @@ function toThaiDateFull(iso) {
   if (!iso) return '';
   return new Date(iso+'T00:00:00').toLocaleDateString('th-TH',{year:'numeric',month:'long',day:'numeric',timeZone:'Asia/Bangkok'});
 }
-
+ 
 // ============================================================
 // UI HELPERS
 // ============================================================
@@ -1009,7 +1009,7 @@ function showConfirm(msg, cb) {
   document.getElementById('confirmOkBtn').onclick = () => { closeConfirm(); if(confirmCallback) confirmCallback(); };
 }
 function closeConfirm() { document.getElementById('confirmDialog').classList.add('hidden'); confirmCallback=null; }
-
+ 
 function getCompanyNames() { return companies.map(c => c.company_name).sort(); }
 function showCompanyDropdown(p) { filterCompanyDropdown(p); document.getElementById(p+'CompanyDropdown').classList.remove('hidden'); }
 function filterCompanyDropdown(p) {
@@ -1017,12 +1017,18 @@ function filterCompanyDropdown(p) {
   const dd = document.getElementById(p+'CompanyDropdown');
   if (!dd) return;
   const names = getCompanyNames().filter(n => n.toLowerCase().includes(q));
-  dd.innerHTML = names.map(n => `<div class="dropdown-item" onclick="selectCompany('${p}','${n.replace(/'/g,"\\'")}'')">${n}</div>`).join('');
+  dd.innerHTML = names.map(n => {
+    const safe = n.replace(/"/g, '&quot;');
+    return `<div class="dropdown-item" data-prefix="${p}" data-name="${safe}" onclick="selectCompanyFromEl(this)">${n}</div>`;
+  }).join('');
   dd.classList.toggle('hidden', !names.length);
 }
+function selectCompanyFromEl(el) {
+  const p = el.getAttribute('data-prefix');
+  const name = el.getAttribute('data-name');
+  selectCompany(p, name);
+}
 function selectCompany(p, name) {
-  // strip trailing extra quote that can appear from template
-  name = name.replace(/'+$/, '');
   document.getElementById(p+'CompanyInput').value = name;
   document.getElementById(p+'CompanyDropdown').classList.add('hidden');
   if (p === 'check') {
@@ -1037,7 +1043,7 @@ document.addEventListener('click', e => {
     if (dd && inp && !dd.contains(e.target) && e.target !== inp) dd.classList.add('hidden');
   });
 });
-
+ 
 function populateStaff(id) {
   const s = document.getElementById(id);
   if (!s) return;
@@ -1049,12 +1055,12 @@ function populateRoundFilter() {
   const names = [...new Set(rounds.map(r=>r.round_name))].sort();
   sel.innerHTML = '<option value="">-- เลือกรอบเอกสาร --</option>'+names.map(n=>`<option value="ROUND:${n}">${n}</option>`).join('');
 }
-
+ 
 function updateDateTime() {
   const el = document.getElementById('currentDateTime');
   if (el) el.textContent = new Date().toLocaleString('th-TH',{timeZone:'Asia/Bangkok',weekday:'short',year:'numeric',month:'short',day:'numeric',hour:'2-digit',minute:'2-digit',hour12:false});
 }
-
+ 
 // ============================================================
 // SAVE RECEIVE
 // ============================================================
@@ -1076,7 +1082,7 @@ async function saveReceive() {
     renderHistoryRecv(); renderDashboard();
   }
 }
-
+ 
 // ============================================================
 // CHECK DOC LIST + SAVE CHECK
 // ============================================================
@@ -1128,7 +1134,7 @@ async function saveCheck() {
     renderHistoryCheck(); renderDashboard();
   }
 }
-
+ 
 // ============================================================
 // ROUNDS
 // ============================================================
@@ -1171,7 +1177,7 @@ function resetRoundForm() {
   document.getElementById('setDeadline1').value='';
   document.getElementById('setDeadline2').value='';
 }
-
+ 
 // ============================================================
 // COMPANY MANAGEMENT
 // ============================================================
@@ -1193,7 +1199,7 @@ async function deleteCompany(fbKey) {
     if (ok) { companies=companies.filter(c=>c.fbKey!==fbKey); showToast('ลบสำเร็จ'); renderCompanyList(); }
   });
 }
-
+ 
 // ============================================================
 // WEBHOOK
 // ============================================================
@@ -1227,7 +1233,7 @@ async function checkAndNotify() {
     showToast(`ส่งแจ้งเตือน ${msgs.length} รายการแล้ว`);
   } catch(e) { showToast('ส่งไม่สำเร็จ','error'); }
 }
-
+ 
 // ============================================================
 // RENDER FUNCTIONS
 // ============================================================
@@ -1236,7 +1242,7 @@ function renderAll() {
   renderHistoryRecv(); renderHistoryCheck(); renderHistoryRound();
   renderDashboard(); populateRoundFilter(); lucide.createIcons();
 }
-
+ 
 function renderCompanyList() {
   const c = document.getElementById('companyList');
   const e = document.getElementById('companyEmpty');
@@ -1248,7 +1254,7 @@ function renderCompanyList() {
       <button onclick="deleteCompany('${co.fbKey}')" class="text-red-600 hover:bg-red-100 px-3 py-1.5 rounded text-xs font-semibold">ลบ</button>
     </div>`).join('');
 }
-
+ 
 // History filter helpers
 function populateHistoryFilters() {
   const fill = (mId, yId, dateArr) => {
@@ -1273,7 +1279,7 @@ function filterMY(items, key, f) {
 function summaryByYear(items, key) {
   const m={}; items.forEach(r=>{ const d=r[key]||''; if(!d)return; const k=d.substring(0,4)+'-'+d.substring(5,7); m[k]=(m[k]||[]); m[k].push(r); }); return m;
 }
-
+ 
 function renderHistoryRecv() {
   const c=document.getElementById('histRecvHistory'), e=document.getElementById('histRecvEmpty');
   const f=getHF('histRecvMonthFilter','histRecvYearFilter');
@@ -1289,7 +1295,7 @@ function renderHistoryRecv() {
   e.classList.add('hidden');
   c.innerHTML=data.map(r=>`<div class="bg-white rounded-lg px-4 py-3 border border-gray-200"><div class="flex justify-between items-center"><span class="text-sm font-bold text-gray-900">${r.company_name}</span><span class="text-xs text-gray-500">${toThaiDateStr(r.date)} | ${r.person}</span></div></div>`).join('');
 }
-
+ 
 function renderHistoryCheck() {
   const c=document.getElementById('histCheckHistory'), e=document.getElementById('histCheckEmpty');
   const f=getHF('histCheckMonthFilter','histCheckYearFilter');
@@ -1305,7 +1311,7 @@ function renderHistoryCheck() {
   e.classList.add('hidden');
   c.innerHTML=data.map(r=>{const nr=DOC_TYPES.filter(d=>r['doc_'+d.key]==='missing').map(d=>d.label);return`<div class="bg-white rounded-lg px-4 py-3 border border-red-200"><div class="flex justify-between items-center mb-2"><span class="text-sm font-bold text-gray-900">${r.company_name}</span><span class="text-xs text-gray-500">${toThaiDateStr(r.check_date)} | ${r.checked_by}</span></div><div class="flex flex-wrap gap-2">${nr.map(d=>`<span class="doc-chip doc-missing">${d}</span>`).join('')}</div></div>`;}).join('');
 }
-
+ 
 function renderHistoryRound() {
   const c=document.getElementById('histRoundHistory'), e=document.getElementById('histRoundEmpty');
   const f=getHF('histRoundMonthFilter','histRoundYearFilter');
@@ -1321,7 +1327,7 @@ function renderHistoryRound() {
   e.classList.add('hidden');
   c.innerHTML=data.map(r=>`<div class="bg-gradient-to-r from-blue-50 to-white rounded-lg px-4 py-3 border border-blue-100 flex flex-wrap items-center gap-2"><span class="text-sm font-bold text-gray-900">${r.round_name}</span><span class="text-xs text-blue-500 bg-blue-50 px-2 py-0.5 rounded">ทุกบริษัท</span>${r.deadline_round1?`<span class="text-xs text-blue-700 bg-blue-100 px-2 py-0.5 rounded">รอบ1: ${toThaiDateStr(r.deadline_round1)}</span>`:''} ${r.deadline_round2_late?`<span class="text-xs text-amber-700 bg-amber-100 px-2 py-0.5 rounded">รอบ2: ${toThaiDateStr(r.deadline_round2_late)}</span>`:''}</div>`).join('');
 }
-
+ 
 // ============================================================
 // DASHBOARD — full rich render matching image
 // ============================================================
@@ -1335,18 +1341,18 @@ function populateMonthFilter() {
     return `<option value="${m}" ${cur===m?'selected':''}>${THAI_MONTHS[parseInt(mo)-1]} ${parseInt(y)+543}</option>`;
   }).join('');
 }
-
+ 
 function renderDashboard() {
   populateMonthFilter();
   const roundFilter  = document.getElementById('dashRoundFilter').value || '';
   const statusFilter = document.getElementById('dashStatusFilter').value || '';
   const monthFilter  = (document.getElementById('dashMonthFilter')||{}).value || '';
-
+ 
   let activeRound = rounds.length ? rounds[rounds.length-1] : null;
   if (roundFilter.startsWith('ROUND:')) activeRound = rounds.find(r=>r.round_name===roundFilter.substring(6));
-
+ 
   const today = new Date().toISOString().split('T')[0];
-
+ 
   // Classify companies
   const receivedList=[], notReceivedList=[], lateList=[];
   companies.forEach(co => {
@@ -1366,13 +1372,13 @@ function renderDashboard() {
     if (isLate) { lateList.push({...co, lateDays, pendingDocs:0, recvDate:latest}); return; }
     notReceivedList.push({...co, lateDays, pendingDocs: DOC_TYPES.length});
   });
-
+ 
   const total=companies.length, rc=receivedList.length, mc=notReceivedList.length, lc=lateList.length;
   const onTimeRate = total>0 ? ((rc/total)*100).toFixed(2) : '0.00';
-
+ 
   // Count missing docs from checks
   const totalMissingDocs = checks.reduce((s,c)=>s+DOC_TYPES.filter(d=>c['doc_'+d.key]==='missing').length, 0);
-
+ 
   // ── KPI CARDS ──
   const kpis = [
     { label:'บริษัททั้งหมด', val:total, unit:'บริษัท', icon:'building-2', bg:'#EFF6FF', iconBg:'#2563EB', valColor:'#1e3a8a' },
@@ -1393,9 +1399,9 @@ function renderDashboard() {
         <p class="text-xs text-slate-400">${k.unit}</p>
       </div>
     </div>`).join('');
-
+ 
   lucide.createIcons();
-
+ 
   // ── TOP 5 LATE TABLE ──
   const sortedLate = [...lateList, ...notReceivedList].sort((a,b)=>b.lateDays-a.lateDays).slice(0,5);
   const statusBadge = (days) => {
@@ -1411,7 +1417,7 @@ function renderDashboard() {
       <td class="px-2 py-2.5 text-center text-xs text-slate-600">${co.pendingDocs||'–'}</td>
       <td class="px-2 py-2.5 text-center">${statusBadge(co.lateDays)}</td>
     </tr>`).join('') : `<tr><td colspan="5" class="text-center text-xs text-slate-400 py-6">ไม่มีบริษัทล่าช้า 🎉</td></tr>`;
-
+ 
   // ── TOP 10 BAR CHART (canvas-free, pure HTML bars) ──
   const top10 = [...lateList, ...notReceivedList].sort((a,b)=>b.lateDays-a.lateDays).slice(0,10);
   const maxDays = Math.max(...top10.map(c=>c.lateDays), 1);
@@ -1427,7 +1433,7 @@ function renderDashboard() {
         </div>`;
       }).join('')}
     </div>` : '<p class="text-xs text-slate-400 text-center py-8">ไม่มีข้อมูล</p>';
-
+ 
   // ── DONUT CHART ──
   const donutEl = document.getElementById('donutChart');
   if (donutEl) {
@@ -1454,7 +1460,7 @@ function renderDashboard() {
     ctx.fillText(total, 60, 57);
     ctx.font='9px Sarabun,sans-serif'; ctx.fillStyle='#94a3b8';
     ctx.fillText('บริษัท', 60, 70);
-
+ 
     document.getElementById('donutLegend').innerHTML = vals.map((v,i)=>`
       <div class="flex items-center gap-2">
         <span class="w-3 h-3 rounded-sm flex-shrink-0" style="background:${colors[i]}"></span>
@@ -1464,7 +1470,7 @@ function renderDashboard() {
         </div>
       </div>`).join('');
   }
-
+ 
   // ── TREND LINE CHART (sparkline via canvas) ──
   const trendEl = document.getElementById('trendChart');
   if (trendEl) {
@@ -1517,7 +1523,7 @@ function renderDashboard() {
     ctx2.fillStyle='#94a3b8'; ctx2.font='8px Sarabun,sans-serif'; ctx2.textAlign='center';
     months6.forEach((m,i)=>{ const x=pad+(i/(months6.length-1))*chartW; ctx2.fillText(m.label, x, H-4); });
   }
-
+ 
   // ── PROGRESS BARS ──
   const progressData = [
     { label:'ส่งตรงเวลา', count:rc, color:'#16a34a', bg:'#dcfce7' },
@@ -1537,11 +1543,11 @@ function renderDashboard() {
       <p class="text-right text-xs text-slate-400 mt-0.5">${pct}%</p>
     </div>`;
   }).join('') + `<div class="pt-2 border-t border-slate-100 flex justify-between"><span class="text-xs font-bold text-slate-700">รวม</span><span class="text-xs font-bold text-slate-700">${total} บริษัท &nbsp;100%</span></div>`;
-
+ 
   // ── RECENT TABLE ──
   const allItems = [...receivedList, ...notReceivedList, ...lateList]
     .sort((a,b)=>(b.lateDays||0)-(a.lateDays||0)).slice(0,15);
-
+ 
   const accountant = (name) => COMPANY_ACCOUNTANT_MAP[name] || '–';
   const mainDoc = (co) => {
     const ch = checks.filter(c=>c.company_name===co.company_name);
@@ -1566,7 +1572,7 @@ function renderDashboard() {
     if (lateList.find(c=>c.fbKey===co.fbKey)) return `<span class="text-xs font-bold px-2 py-0.5 rounded-full" style="background:#fee2e2;color:#dc2626">ล่าช้ามาก</span>`;
     return co.lateDays>5 ? `<span class="text-xs font-bold px-2 py-0.5 rounded-full" style="background:#fef3c7;color:#d97706">เสี่ยง</span>` : `<span class="text-xs font-bold px-2 py-0.5 rounded-full" style="background:#dbeafe;color:#2563eb">เริ่มล่าช้า</span>`;
   };
-
+ 
   document.getElementById('recentTable').innerHTML = allItems.map((co,i)=>{
     const pct = progress(co);
     const isLateRow = lateList.find(c=>c.fbKey===co.fbKey);
@@ -1589,10 +1595,10 @@ function renderDashboard() {
       </td>
     </tr>`;
   }).join('') || `<tr><td colspan="8" class="text-center text-xs text-slate-400 py-8">ยังไม่มีข้อมูล</td></tr>`;
-
+ 
   lucide.createIcons();
 }
-
+ 
 // ============================================================
 // EXPORT
 // ============================================================
@@ -1602,7 +1608,7 @@ function downloadCheckReport() {
   const csv=[hdr,...rows].map(r=>r.map(c=>`"${(c||'').replace(/"/g,'""')}"`).join(',')).join('\n');
   const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8;'})); a.download='report.csv'; a.click();
 }
-
+ 
 // ============================================================
 // DISCORD NOTIFY SCHEDULER
 // ============================================================
@@ -1656,7 +1662,7 @@ function renderNotifyStatus(){
   if(!rows.length)return;
   el.innerHTML=`<div class="card-glass rounded-lg p-4 mb-4"><h4 class="text-sm font-bold text-slate-800 mb-3">สถานะแจ้งเตือน Discord</h4><div class="space-y-2">${rows.join('')}</div></div>`;
 }
-
+ 
 // ============================================================
 // INIT — check config → show login → start app
 // ============================================================
@@ -1668,7 +1674,7 @@ function initApp() {
   switchTab('dashboard');
   loadAllData().then(()=>{ setTimeout(()=>{ scheduleDiscordNotifications(); renderNotifyStatus(); },1000); });
 }
-
+ 
 // Boot sequence
 if (!FB_API_KEY || !FB_PROJ_ID || !FB_URL) {
   document.getElementById('fbSetup').style.display='flex';
@@ -1677,8 +1683,9 @@ if (!FB_API_KEY || !FB_PROJ_ID || !FB_URL) {
   showLoginScreen();
   initFirebaseSDK();
 }
-
+ 
 lucide.createIcons();
 </script>
 </body>
 </html>
+ 
